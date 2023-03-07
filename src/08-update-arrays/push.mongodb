@@ -1,0 +1,12 @@
+use('platzi_store')
+
+db.inventory.updateOne(
+    // Query
+    {_id:4},
+    // Insercion de datos en el array del Attribute
+    {
+        $push: {
+            tags: "headphone"
+        }
+    }
+)
