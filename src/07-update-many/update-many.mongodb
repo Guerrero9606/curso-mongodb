@@ -1,0 +1,12 @@
+use('sample_training')
+
+db.zips.updateMany(
+    //Query
+    { city: 'CLEVELAND' },
+    //Update - Operators
+    {
+        $inc: {
+            pop: 1000 //Incrementar la poblacion en mil
+        }
+    }
+)
