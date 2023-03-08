@@ -1,0 +1,26 @@
+use("sample_training")
+
+// db.trips.find({
+//     "start station location.type": "point"
+// })
+
+// Querys in arrays and subdocuments
+
+// First position of the array
+// db.companies.find({
+//     "relationships.0.person.first_name": "Mark"
+// },{
+//     name: 1,
+//     relationships: 1
+// })
+
+db.companies.find({
+    relationships: {
+        $elemMatch: {
+            "person.first_name": "Mark"
+        }
+    }
+},{
+    name: 1,
+    relationships: 1
+}).count()

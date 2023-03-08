@@ -1,0 +1,6 @@
+use("platzi_store")
+
+db.categories
+    .find()
+    .skip(2) // Scape first two documents
+    .limit(2) // Limit to two results
